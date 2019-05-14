@@ -11,7 +11,7 @@ body {
 }
 
 .navbar a:hover {
-  color: color menuItemHover;
+  color: white;
 }
 
 .main a {
