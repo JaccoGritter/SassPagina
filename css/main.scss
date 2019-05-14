@@ -2,15 +2,20 @@ $colors: (
     primary: rgb(50, 140, 241),
     menuItem: rgba(255, 255, 255, 0.6),
     menuItemHover: rgba(255, 255, 255, 1),
-    mainText: rgba(255, 255, 255, 0.9)
+    mainText: rgba(255, 255, 255, 0.9),
+    appointment: rgb(83, 83, 238)
 );
 
 
 $menuFont: 'Raleway';
 $mainFont: 'Tahoma';
 
+@function color($colorname) {
+    @return map-get($colors, $colorname)
+}
+
 body {
-    background-color: map-get($colors, primary);
+    background-color: color(primary);
 }
 
 .navbar {
@@ -19,17 +24,17 @@ body {
     font-weight: bold;
     font-size: 1.8em;
     text-decoration: none;
-    color: map-get($colors, menuItem);
+    color: color(menuItem);
     }
     a:hover {
-        color: map-get($colors, menuItemHover);
+        color: color (menuItemHover);
     }
 }
 
 .main a {
     text-decoration: none;
     font-family: $mainFont, sans-serif;
-    color: map-get($colors, mainText);
+    color: color(mainText);
 }
 
 ul {
@@ -53,7 +58,7 @@ nav {
 .main {
     text-align: center;
     font-family: $mainFont, sans-serif;
-    color: map-get($colors, mainText);
+    color: color(mainText);
     margin-left: 1em;
     padding: 1em;
     display: flex;
@@ -66,7 +71,7 @@ nav {
 #plan {
     width: 15em;
     height: 4em;
-    background-color: rgb(46, 233, 247);
+    background-color: color(appointment);
     border-radius: 15px;
     margin: 10em 8em;
     padding: 20px 0px 0px 0px;
